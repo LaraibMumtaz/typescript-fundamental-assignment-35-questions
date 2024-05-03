@@ -83,7 +83,36 @@ console.log("count", checkNumberPositive(numberArrays));
 //Arrays and Array Methods
 //Write a function that takes an array of words and returns a new array containing only the words that start with the letter 'a'.
 const words = ["Apple", "Banana", "Apricot", "Avocado", "Orange"];
-// Filter the words array to only include words that start with 'a'
-const wordsStartingWithA = words.filter(word => word.toLowerCase().startsWith('a'));
-// Output the filtered array
-console.log(wordsStartingWithA); // Output: ["Apple", "Apricot", "Avocado"]
+let newArray = [];
+for (let i = 0; i < words.length; i++) {
+    let tempArray = words[i];
+    if (tempArray[0] == "a" || tempArray[0] == "A") {
+        newArray.push(tempArray);
+    }
+}
+console.log(newArray);
+//Create a script that logs the second to last element of an array named fruits
+const fruits = ["apple", "orange", "banana", "mango"];
+const sendlastlen = fruits.length - 2;
+console.log(fruits[sendlastlen]);
+//Develop a function that takes an array of numbers and returns a new array with each number squared.
+const squareArray = (array1) => {
+    let newarray1 = [];
+    for (let i = 0; i < array1.length; i++) {
+        let array3 = array1[i] ** 2;
+        newarray1.push(array3);
+    }
+    return newarray1;
+};
+let Array2 = [2, 5, 6, 8, 4];
+console.log(squareArray(Array2));
+//Write a JavaScript function that accepts an array and reverses its elements without using the .reverse() method. Log the result.
+function reverseArray(arrayRevrse) {
+    let reverse = [];
+    for (let i = arrayRevrse.length - 1; i >= 0; i--) {
+        reverse.push(arrayRevrse[i]);
+    }
+    return reverse;
+}
+console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+//Given an array scores [10, 5, 20, 20, 4, 5, 2, 25, 1], write a function that logs the number of times the score exceeded the maximum score and the number of times it fell below the minimum score.

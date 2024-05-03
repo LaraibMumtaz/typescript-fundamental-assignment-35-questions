@@ -1,4 +1,4 @@
-import inquirer from "inquirer"
+import inquirer from "inquirer";
 //Write a script to log "Hello, World!" to the console.
 console.log("Hello world");
 
@@ -56,34 +56,28 @@ const temperatures: number[] = [25, 28, 30, 22, 27]; // Example temperatures arr
 let highestTemperature: number = temperatures[0]; // Assume the first temperature is the highest initially
 
 for (let i = 1; i < temperatures.length; i++) {
-    if (temperatures[i] > highestTemperature) {
-        highestTemperature = temperatures[i];
-    }
+  if (temperatures[i] > highestTemperature) {
+    highestTemperature = temperatures[i];
+  }
 }
 
 console.log("The highest temperature is:", highestTemperature);
 
-
 //--------------------------------------------------------------------
 //Create a script that prompts the user to enter their age and then logs whether they are a minor (under 18) or an adult.
-const answer=await inquirer.prompt([
-    {
-        name:"Age",
-        type:"number",
-        message:"Enter your age:",
-    },
-
+const answer = await inquirer.prompt([
+  {
+    name: "Age",
+    type: "number",
+    message: "Enter your age:",
+  },
 ]);
 
-if (answer.Age >18){
-    console.log("adult")
+if (answer.Age > 18) {
+  console.log("adult");
+} else {
+  console.log("minor");
 }
-else{
-    console.log("minor")
-}
-
-
-
 
 //Write a function that takes an array of numbers and returns the count of positive numbers in the array.
 const numberArrays = [1, 2, 3, 4, 5, -6, -7, -8, 0, 100];
@@ -103,10 +97,41 @@ console.log("count", checkNumberPositive(numberArrays));
 //Write a function that takes an array of words and returns a new array containing only the words that start with the letter 'a'.
 
 const words: string[] = ["Apple", "Banana", "Apricot", "Avocado", "Orange"];
+let newArray = [];
+for (let i = 0; i < words.length; i++) {
+  let tempArray = words[i];
+  if (tempArray[0] == "a" || tempArray[0] == "A") {
+    newArray.push(tempArray);
+  }
+}
+console.log(newArray);
 
-// Filter the words array to only include words that start with 'a'
-const wordsStartingWithA: string[] = words.filter(word => word.toLowerCase().startsWith('a'));
+//Create a script that logs the second to last element of an array named fruits
+const fruits: string[] = ["apple", "orange", "banana", "mango"];
+const sendlastlen = fruits.length - 2;
+console.log(fruits[sendlastlen]);
 
-// Output the filtered array
-console.log(wordsStartingWithA); // Output: ["Apple", "Apricot", "Avocado"]
- 
+//Develop a function that takes an array of numbers and returns a new array with each number squared.
+const squareArray = (array1: Array<number>) => {
+  let newarray1 = [];
+  for (let i = 0; i < array1.length; i++) {
+    let array3 = array1[i] ** 2;
+    newarray1.push(array3);
+  }
+  return newarray1;
+};
+let Array2 = [2, 5, 6, 8, 4];
+console.log(squareArray(Array2));
+
+//Write a JavaScript function that accepts an array and reverses its elements without using the .reverse() method. Log the result.
+
+function reverseArray(arrayRevrse: Array<number>) {
+  let reverse = [];
+  for (let i = arrayRevrse.length - 1; i >= 0; i--) {
+    reverse.push(arrayRevrse[i]);
+  }
+  return reverse;
+}
+
+console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+//Given an array scores [10, 5, 20, 20, 4, 5, 2, 25, 1], write a function that logs the number of times the score exceeded the maximum score and the number of times it fell below the minimum score.
