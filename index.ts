@@ -135,3 +135,232 @@ function reverseArray(arrayRevrse: Array<number>) {
 
 console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
 //Given an array scores [10, 5, 20, 20, 4, 5, 2, 25, 1], write a function that logs the number of times the score exceeded the maximum score and the number of times it fell below the minimum score.
+let scores=[10,5,20,20,4,5,2,25,1]
+let maxno=Math.max(...scores)
+let minno=Math.min(...scores)
+
+function exdblow(score:number[],max:number,min:number){
+let exceed=0
+let below=0
+for(let i=0;i<score.length;i++){
+        if(score[i]>max){
+          exceed=exceed+1
+          
+        }
+        else if (score[i]<min){
+              below=below+1
+              
+        }
+        else{
+          console.log("nothing")     
+}
+
+}
+console.log("the number of times it fell exceed the minimum score:",exceed)
+console.log("times the score below the maximum score:",below)
+
+}
+
+
+exdblow([56,56,8,2,-9,-8,-65,47],maxno,minno)
+//-------------------------------------------------------------------
+//Create a function that removes all falsey values from an array. Falsey values include false, null, 0, "", undefined, and NaN.
+function removeFalsyValues(arr: any[]): any[] {
+  const newArray: any[] = [];
+  for (const value of arr) {
+      if (value) {
+          newArray.push(value);
+      }
+  }
+  return newArray;
+}
+
+// Example usage:
+const array: any[] = [false, null, 0, "", undefined, NaN, 42, "hello"];
+const filteredArray: any[] = removeFalsyValues(array);
+console.log(filteredArray); // Output: [42, "hello"]
+
+//====================================================================================
+//// Arrays to concatenate
+const array1: number[] = [1, 2, 3];
+const array2: number[] = [4, 5, 6];
+
+// Concatenating the arrays using the concat function
+const concatenatedArray: number[] = array1.concat(array2);
+
+// Outputting the concatenated array
+console.log(concatenatedArray); // Output: [1, 2, 3, 4, 5, 6]
+//================================================================
+//Develop a function called sumOfElements that calculates the sum of all elements in an array that are either even or odd, based on a parameter.
+function sumOfElements(arr: number[], isEven: boolean): number {
+  // Initialize sum
+  let sum: number = 0;
+
+  // Loop through each element in the array
+  for (const num of arr) {
+      // Check if the number is even or odd based on the isEven parameter
+      if ((isEven && num % 2 === 0) || (!isEven && num % 2 !== 0)) {
+          // Add the number to the sum if it matches the condition
+          sum += num;
+      }
+  }
+
+  // Return the sum
+  return sum;
+}
+
+// Example usage:
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenSum: number = sumOfElements(numbers, true);
+const oddSum: number = sumOfElements(numbers, false);
+console.log("Sum of even elements:", evenSum); // Output: 30 (2 + 4 + 6 + 8 + 10)
+console.log("Sum of odd elements:", oddSum); // Output: 25 (1 + 3 + 5 + 7 + 9)
+//==================================================================================
+//Create a function that checks whether an element exists in an array. If it exists, return the index, otherwise return -1.
+function findIndex(arr: any[], element: any): number {
+  // Loop through each element in the array
+  for (let i = 0; i < arr.length; i++) {
+      // Check if the current element matches the target element
+      if (arr[i] === element) {
+          // If found, return the index
+          return arr.indexOf(element);
+      }
+  }
+  // If the element is not found, return -1
+  return -1;
+}
+
+// Example usage:
+const array5: number[] = [1, 2, 3, 4, 5];
+const elementToFind: number = 3;
+const index: number = findIndex(array5, elementToFind);
+console.log("Index of element:", index); 
+//================================================================================
+//Write a function to find and return the smallest number in an array of integers.
+function smallestint(arr6:number[]){
+                  let small1:number=Math.min(...arr6)
+                  return small1
+}
+console.log("smallest number:",smallestint([22,56,35,2,56,2,8,9]) )
+//=============================================================================
+//Write a function calculateProduct that takes an array of numbers and returns the product of all elements.
+function calculateProduct(numbers: number[]): number {
+ 
+
+  // Initialize the product with the first element of the array
+  let product: number = numbers[0];
+
+  // Loop through each element in the array starting from the second element
+  for (let i = 1; i < numbers.length; i++) {
+      // Multiply the current element with the product
+      product *= numbers[i];
+  }
+
+  // Return the product
+  return product;
+}
+
+// Example usage:
+const numbers5: number[] = [1, 2, 3, 4, 5];
+const product: number = calculateProduct(numbers5);
+console.log("Product:", product); 
+//===================================================================================
+//Develop a function filterByLength that takes an array of strings and a number n. The function should
+// return an array containing only the strings that are longer than n characters.
+function filterByLength(strings: string[], n: number): string[] {
+  const filteredStrings: string[] = [];
+  
+  for (const str of strings) {
+      if (str.length > n) {
+          filteredStrings.push(str);
+      }
+  }
+  
+  return filteredStrings;
+}
+
+// Example usage:
+const strings: string[] = ["apple", "banana", "orange", "kiwi", "pineapple"];
+const n: number = 5;
+const filteredArray1: string[] = filterByLength(strings, n);
+console.log(filteredArray1);
+//==========================================================================
+//Create a function findDuplicates that finds and logs all duplicates in an array.
+function findDuplicates(arr: any[]): void {
+  const duplicates: any[] = [];
+  const seen: {[key: string]: boolean} = {};
+
+  for (const item of arr) {
+      if (seen[item]) {
+          if (!duplicates.includes(item)) {
+              duplicates.push(item);
+          }
+      } else {
+          seen[item] = true;
+      }
+  }
+
+  if (duplicates.length === 0) {
+      console.log("No duplicates found.");
+  } else {
+      console.log("Duplicates found:", duplicates);
+  }
+}
+
+// Example usage:
+const array6: any[] = [1, 2, 3, 4, 5, 2, 3, 6, 7, 8, 5];
+findDuplicates(array6);
+
+//==========================================================
+//Write a function incrementAll that takes an array of integers and increments each element by one.
+function incrementAll(arr: number[]): number[] {
+  const incrementedArray: number[] = [];
+
+  for (const num of arr) {
+      incrementedArray.push(num + 1);
+  }
+
+  return incrementedArray;
+}
+
+// Example usage:
+const numbers9: number[] = [1, 2, 3, 4, 5];
+const incrementedNumbers: number[] = incrementAll(numbers9);
+console.log(incrementedNumbers);
+//================================================================
+//
+function countOccurrences(arr: any[], element: any): number {
+  let count: number = 0;
+
+  for (const item of arr) {
+      if (item === element) {
+          count++;
+      }
+  }
+
+  return count;
+}
+
+// Example usage:
+const array8: any[] = [1, 2, 2, 3, 2, 4, 5, 2];
+const elementToCount: number = 2;
+const occurrences: number = countOccurrences(array8, elementToCount);
+console.log(`The element ${elementToCount} appears ${occurrences} times.`);
+//==============================================================================
+//Create a function isSorted that checks if an array is sorted in ascending order.
+function isSorted(arr: number[]): boolean {
+  for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+          return false;
+      }
+  }
+  return true;
+}
+
+// Example usage:
+const sortedArray: number[] = [1, 2, 3, 4, 5];
+const unsortedArray: number[] = [5, 2, 7, 1, 3];
+
+console.log(isSorted(sortedArray)); // Output: true
+console.log(isSorted(unsortedArray)); // Output: false
+//============================================================
