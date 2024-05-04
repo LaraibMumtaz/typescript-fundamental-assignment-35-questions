@@ -1,26 +1,26 @@
 import inquirer from "inquirer";
-//Write a script to log "Hello, World!" to the console.
+//1-Write a script to log "Hello, World!" to the console.
 console.log("Hello world");
 
-//Create a variable temperature and assign it a value. Then log "It's cold!" if the temperature is below 20 degrees Celsius.
+// 2- Create a variable temperature and assign it a value. Then log "It's cold!" if the temperature is below 20 degrees Celsius.
 const temperature: number = 15;
 if (temperature < 20) {
   console.log("Its's cold!");
 }
 
-//Use arithmetic operators to solve the problem: If you have 10 apples and you give away 3, how many do you have left? Log the result.
+// 3- Use arithmetic operators to solve the problem: If you have 10 apples and you give away 3, how many do you have left? Log the result.
 const apple: number = 10;
 const GiveAway = 3;
 const left = apple - GiveAway;
 console.log(`apple left: ${left}`);
 
-//Declare two variables, firstName and lastName, then create a third variable fullName that combines them. Log the result.
+// 4- Declare two variables, firstName and lastName, then create a third variable fullName that combines them. Log the result.
 const firstName: string = "laraib";
 const lastName: string = "Mumtaz";
 const fullName: string = firstName + lastName;
 console.log(`full Name: ${fullName}`);
 
-//Write a TypeScript code that uses a comparison operator to check if the number 5 is greater than 3. Log "Yes" if true, otherwise log "No".
+//5- Write a TypeScript code that uses a comparison operator to check if the number 5 is greater than 3. Log "Yes" if true, otherwise log "No".
 
 const number5: number = 5;
 if (number5 > 3) {
@@ -30,7 +30,7 @@ if (number5 > 3) {
 }
 
 //Medium
-//Create a function calculateArea that takes the radius of a circle as an input and returns the area of the circle.
+//6- Create a function calculateArea that takes the radius of a circle as an input and returns the area of the circle.
 function calculateArea(radius: number): number {
   const area: number = Math.PI * radius * radius;
   return area;
@@ -39,7 +39,7 @@ function calculateArea(radius: number): number {
 const radius: number = 14;
 console.log(calculateArea(radius));
 
-//Write a loop that logs numbers from 1 to 50. For multiples of 3, log "Fizz" instead of the number, and for multiples of 5, log "Buzz".
+// 7- Write a loop that logs numbers from 1 to 50. For multiples of 3, log "Fizz" instead of the number, and for multiples of 5, log "Buzz".
 for (let i = 1; i <= 50; i++) {
   if (i % 3 == 0) {
     console.log("Fizz");
@@ -50,7 +50,7 @@ for (let i = 1; i <= 50; i++) {
   }
 }
 
-//Define an array temperatures with at least five different temperatures (numbers). Write a script to find and log the highest temperature.
+// 8- Define an array temperatures with at least five different temperatures (numbers). Write a script to find and log the highest temperature.
 const temperatures: number[] = [25, 28, 30, 22, 27]; // Example temperatures array
 
 let highestTemperature: number = temperatures[0]; // Assume the first temperature is the highest initially
@@ -64,7 +64,7 @@ for (let i = 1; i < temperatures.length; i++) {
 console.log("The highest temperature is:", highestTemperature);
 
 //--------------------------------------------------------------------
-//Create a script that prompts the user to enter their age and then logs whether they are a minor (under 18) or an adult.
+// 9- Create a script that prompts the user to enter their age and then logs whether they are a minor (under 18) or an adult.
 const answer = await inquirer.prompt([
   {
     name: "Age",
@@ -79,7 +79,7 @@ if (answer.Age > 18) {
   console.log("minor");
 }
 
-//Write a function that takes an array of numbers and returns the count of positive numbers in the array.
+// 10- Write a function that takes an array of numbers and returns the count of positive numbers in the array.
 const numberArrays = [1, 2, 3, 4, 5, -6, -7, -8, 0, 100];
 
 const checkNumberPositive = (numberArray: number[]) => {
@@ -94,7 +94,7 @@ const checkNumberPositive = (numberArray: number[]) => {
 
 console.log("count", checkNumberPositive(numberArrays));
 //Arrays and Array Methods
-//Write a function that takes an array of words and returns a new array containing only the words that start with the letter 'a'.
+//11- Write a function that takes an array of words and returns a new array containing only the words that start with the letter 'a'.
 
 const words: string[] = ["Apple", "Banana", "Apricot", "Avocado", "Orange"];
 let newArray = [];
@@ -106,12 +106,12 @@ for (let i = 0; i < words.length; i++) {
 }
 console.log(newArray);
 
-//Create a script that logs the second to last element of an array named fruits
+//12- Create a script that logs the second to last element of an array named fruits
 const fruits: string[] = ["apple", "orange", "banana", "mango"];
 const sendlastlen = fruits.length - 2;
 console.log(fruits[sendlastlen]);
 
-//Develop a function that takes an array of numbers and returns a new array with each number squared.
+//13- Develop a function that takes an array of numbers and returns a new array with each number squared.
 const squareArray = (array1: Array<number>) => {
   let newarray1 = [];
   for (let i = 0; i < array1.length; i++) {
@@ -123,7 +123,7 @@ const squareArray = (array1: Array<number>) => {
 let Array2 = [2, 5, 6, 8, 4];
 console.log(squareArray(Array2));
 
-//Write a JavaScript function that accepts an array and reverses its elements without using the .reverse() method. Log the result.
+//14- Write a JavaScript function that accepts an array and reverses its elements without using the .reverse() method. Log the result.
 
 function reverseArray(arrayRevrse: Array<number>) {
   let reverse = [];
@@ -134,7 +134,7 @@ function reverseArray(arrayRevrse: Array<number>) {
 }
 
 console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
-//Given an array scores [10, 5, 20, 20, 4, 5, 2, 25, 1], write a function that logs the number of times the score exceeded the maximum score and the number of times it fell below the minimum score.
+//15- Given an array scores [10, 5, 20, 20, 4, 5, 2, 25, 1], write a function that logs the number of times the score exceeded the maximum score and the number of times it fell below the minimum score.
 let scores=[10,5,20,20,4,5,2,25,1]
 let maxno=Math.max(...scores)
 let minno=Math.min(...scores)
@@ -164,7 +164,7 @@ console.log("times the score below the maximum score:",below)
 
 exdblow([56,56,8,2,-9,-8,-65,47],maxno,minno)
 //-------------------------------------------------------------------
-//Create a function that removes all falsey values from an array. Falsey values include false, null, 0, "", undefined, and NaN.
+//16- Create a function that removes all falsey values from an array. Falsey values include false, null, 0, "", undefined, and NaN.
 function removeFalsyValues(arr: any[]): any[] {
   const newArray: any[] = [];
   for (const value of arr) {
@@ -175,13 +175,13 @@ function removeFalsyValues(arr: any[]): any[] {
   return newArray;
 }
 
-// Example usage:
+
 const array: any[] = [false, null, 0, "", undefined, NaN, 42, "hello"];
 const filteredArray: any[] = removeFalsyValues(array);
-console.log(filteredArray); // Output: [42, "hello"]
+console.log(filteredArray); 
 
 //====================================================================================
-//// Arrays to concatenate
+//// 17-Arrays to concatenate
 const array1: number[] = [1, 2, 3];
 const array2: number[] = [4, 5, 6];
 
@@ -191,7 +191,7 @@ const concatenatedArray: number[] = array1.concat(array2);
 // Outputting the concatenated array
 console.log(concatenatedArray); // Output: [1, 2, 3, 4, 5, 6]
 //================================================================
-//Develop a function called sumOfElements that calculates the sum of all elements in an array that are either even or odd, based on a parameter.
+//18- Develop a function called sumOfElements that calculates the sum of all elements in an array that are either even or odd, based on a parameter.
 function sumOfElements(arr: number[], isEven: boolean): number {
   // Initialize sum
   let sum: number = 0;
@@ -209,14 +209,14 @@ function sumOfElements(arr: number[], isEven: boolean): number {
   return sum;
 }
 
-// Example usage:
+
 const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const evenSum: number = sumOfElements(numbers, true);
 const oddSum: number = sumOfElements(numbers, false);
-console.log("Sum of even elements:", evenSum); // Output: 30 (2 + 4 + 6 + 8 + 10)
-console.log("Sum of odd elements:", oddSum); // Output: 25 (1 + 3 + 5 + 7 + 9)
+console.log("Sum of even elements:", evenSum); 
+console.log("Sum of odd elements:", oddSum); 
 //==================================================================================
-//Create a function that checks whether an element exists in an array. If it exists, return the index, otherwise return -1.
+//19- Create a function that checks whether an element exists in an array. If it exists, return the index, otherwise return -1.
 function findIndex(arr: any[], element: any): number {
   // Loop through each element in the array
   for (let i = 0; i < arr.length; i++) {
@@ -230,20 +230,20 @@ function findIndex(arr: any[], element: any): number {
   return -1;
 }
 
-// Example usage:
+
 const array5: number[] = [1, 2, 3, 4, 5];
 const elementToFind: number = 3;
 const index: number = findIndex(array5, elementToFind);
 console.log("Index of element:", index); 
 //================================================================================
-//Write a function to find and return the smallest number in an array of integers.
+//20-Write a function to find and return the smallest number in an array of integers.
 function smallestint(arr6:number[]){
                   let small1:number=Math.min(...arr6)
                   return small1
 }
 console.log("smallest number:",smallestint([22,56,35,2,56,2,8,9]) )
 //=============================================================================
-//Write a function calculateProduct that takes an array of numbers and returns the product of all elements.
+//21- Write a function calculateProduct that takes an array of numbers and returns the product of all elements.
 function calculateProduct(numbers: number[]): number {
  
 
@@ -260,12 +260,12 @@ function calculateProduct(numbers: number[]): number {
   return product;
 }
 
-// Example usage:
+
 const numbers5: number[] = [1, 2, 3, 4, 5];
 const product: number = calculateProduct(numbers5);
 console.log("Product:", product); 
 //===================================================================================
-//Develop a function filterByLength that takes an array of strings and a number n. The function should
+//22 -Develop a function filterByLength that takes an array of strings and a number n. The function should
 // return an array containing only the strings that are longer than n characters.
 function filterByLength(strings: string[], n: number): string[] {
   const filteredStrings: string[] = [];
@@ -279,13 +279,12 @@ function filterByLength(strings: string[], n: number): string[] {
   return filteredStrings;
 }
 
-// Example usage:
 const strings: string[] = ["apple", "banana", "orange", "kiwi", "pineapple"];
 const n: number = 5;
 const filteredArray1: string[] = filterByLength(strings, n);
 console.log(filteredArray1);
 //==========================================================================
-//Create a function findDuplicates that finds and logs all duplicates in an array.
+//23- Create a function findDuplicates that finds and logs all duplicates in an array.
 function findDuplicates(arr: any[]): void {
   const duplicates: any[] = [];
   const seen: {[key: string]: boolean} = {};
@@ -307,12 +306,12 @@ function findDuplicates(arr: any[]): void {
   }
 }
 
-// Example usage:
+
 const array6: any[] = [1, 2, 3, 4, 5, 2, 3, 6, 7, 8, 5];
 findDuplicates(array6);
 
 //==========================================================
-//Write a function incrementAll that takes an array of integers and increments each element by one.
+//24- Write a function incrementAll that takes an array of integers and increments each element by one.
 function incrementAll(arr: number[]): number[] {
   const incrementedArray: number[] = [];
 
@@ -323,12 +322,12 @@ function incrementAll(arr: number[]): number[] {
   return incrementedArray;
 }
 
-// Example usage:
+
 const numbers9: number[] = [1, 2, 3, 4, 5];
 const incrementedNumbers: number[] = incrementAll(numbers9);
 console.log(incrementedNumbers);
 //================================================================
-//
+//25- Develop a function countOccurrences that counts how many times a specific element appears in an array.
 function countOccurrences(arr: any[], element: any): number {
   let count: number = 0;
 
@@ -347,7 +346,7 @@ const elementToCount: number = 2;
 const occurrences: number = countOccurrences(array8, elementToCount);
 console.log(`The element ${elementToCount} appears ${occurrences} times.`);
 //==============================================================================
-//Create a function isSorted that checks if an array is sorted in ascending order.
+//26- Create a function isSorted that checks if an array is sorted in ascending order.
 function isSorted(arr: number[]): boolean {
   for (let i = 0; i < arr.length - 1; i++) {
       if (arr[i] > arr[i + 1]) {
@@ -357,14 +356,14 @@ function isSorted(arr: number[]): boolean {
   return true;
 }
 
-// Example usage:
+
 const sortedArray: number[] = [1, 2, 3, 4, 5];
 const unsortedArray: number[] = [5, 2, 7, 1, 3];
 
-console.log(isSorted(sortedArray)); // Output: true
-console.log(isSorted(unsortedArray)); // Output: false
-//============================================================
-//Write a function that receives an array of names and formats them into a string separated by commas, except for the last two names, which should be separated by "and".
+console.log(isSorted(sortedArray)); 
+console.log(isSorted(unsortedArray));
+
+//27- Write a function that receives an array of names and formats them into a string separated by commas, except for the last two names, which should be separated by "and".
 function formatNames(names: string[]): string {
  
 
@@ -372,11 +371,11 @@ function formatNames(names: string[]): string {
   return formattedNames;
 }
 
-// Example usage:
+
 const namesArray = ['Alice', 'Bob', 'Charlie', 'David'];
 console.log(formatNames(namesArray));
 //==============================================================================
-//Develop a function that converts an array of Fahrenheit temperatures to Celsius and logs the new temperatures.
+//28- Develop a function that converts an array of Fahrenheit temperatures to Celsius and logs the new temperatures.
 function fahrenheitToCelsius(fahrenheitTemperatures: number[]): void {
   const celsiusTemperatures: number[] = [];
 
@@ -389,11 +388,11 @@ function fahrenheitToCelsius(fahrenheitTemperatures: number[]): void {
   console.log("Celsius Temperatures:", celsiusTemperatures);
 }
 
-// Example usage:
+
 const fahrenheitTemperatures = [32, 68, 86, 104];
 fahrenheitToCelsius(fahrenheitTemperatures);
 //====================================================================
-//Write a function minMaxAverage that takes an array of numbers and returns an object with properties for the minimum, maximum, and average of those numbers.
+//29- Write a function minMaxAverage that takes an array of numbers and returns an object with properties for the minimum, maximum, and average of those numbers.
 function minMaxAverage(numbers: number[]): { min: number, max: number, average: number } {
   if (numbers.length === 0) {
       throw new Error("Array must not be empty");
@@ -423,12 +422,12 @@ function minMaxAverage(numbers: number[]): { min: number, max: number, average: 
   };
 }
 
-// Example usage:
+
 const numbersArray = [3, 8, 1, 6, 10];
 const result = minMaxAverage(numbersArray);
 console.log(result);
 //===========================================================================
-//Create a function swapElements that swaps two specified indices in an array.
+//30-Create a function swapElements that swaps two specified indices in an array.
 function swapElements<T>(array: T[], index1: number, index2: number): void {
  
   const temp = array[index1];
@@ -440,7 +439,7 @@ console.log("Before swap:", arrayToSwap);
 swapElements(arrayToSwap, 1, 3);
 console.log("After swap:", arrayToSwap); 
 //======================================================================================
-//Develop a function that takes two inputs, a string and a character, and returns the number of times the character appears in the string.
+//31-Develop a function that takes two inputs, a string and a character, and returns the number of times the character appears in the string.
 function countCharacter(inputString: string, character: string): number {
   let count = 0;
   for (let i = 0; i < inputString.length; i++) {
@@ -456,7 +455,7 @@ const characterToCount = "o";
 const result3 = countCharacter(inputString, characterToCount);
 console.log(`The character "${characterToCount}" appears ${result3} times in the string.`);
 //=============================================================================================
-//Create a 'to-do list' array of objects where each object has properties task and completed (a boolean). Write a function to log only the tasks that are not yet completed.
+//32-Create a 'to-do list' array of objects where each object has properties task and completed (a boolean). Write a function to log only the tasks that are not yet completed.
 const todoList = [
   { task: "Finish coding assignment", completed: false },
   { task: "Buy groceries", completed: true },
@@ -475,7 +474,7 @@ function logIncompleteTasks(todoList: { task: string; completed: boolean }[]): v
 logIncompleteTasks(todoList);
 
 //==================================================================================
-//Write a function that takes an array of integers and sorts them from smallest to largest.
+//33- Write a function that takes an array of integers and sorts them from smallest to largest.
 function sortIntegers(array: number[]): number[] {
   return array.slice().sort((a, b) => a - b);
 }
@@ -486,7 +485,7 @@ const sortedIntegers = sortIntegers(integers);
 console.log("Sorted integers:", sortedIntegers);
 
 //================================================================
-//Develop a TypeScript program that logs every element of an array in reverse order without using the .reverse() method.
+//34-Develop a TypeScript program that logs every element of an array in reverse order without using the .reverse() method.
 function logArrayReverse<T>(array: T[]): void {
   for (let i = array.length - 1; i >= 0; i--) {
       console.log(array[i]);
@@ -498,7 +497,7 @@ const array12 = [1, 2, 3, 4, 5];
 logArrayReverse(array12);
 
 //===============================================================
-//Write a script that simulates a basic calculator. It should take two operands and an operator ('+', '-', '*', '/') from the user, perform the operation, and log the result.
+//35- Write a script that simulates a basic calculator. It should take two operands and an operator ('+', '-', '*', '/') from the user, perform the operation, and log the result.
 
 const answer1 = await inquirer.prompt([
   { message: "Enter first number ", type: "number", name: "firstNumber" },
