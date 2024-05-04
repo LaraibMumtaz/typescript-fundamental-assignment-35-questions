@@ -291,7 +291,6 @@ function countOccurrences(arr, element) {
     }
     return count;
 }
-// Example usage:
 const array8 = [1, 2, 2, 3, 2, 4, 5, 2];
 const elementToCount = 2;
 const occurrences = countOccurrences(array8, elementToCount);
@@ -312,3 +311,142 @@ const unsortedArray = [5, 2, 7, 1, 3];
 console.log(isSorted(sortedArray)); // Output: true
 console.log(isSorted(unsortedArray)); // Output: false
 //============================================================
+//Write a function that receives an array of names and formats them into a string separated by commas, except for the last two names, which should be separated by "and".
+function formatNames(names) {
+    const formattedNames = names.slice(0, -1).join(', ') + ', and ' + names[names.length - 1];
+    return formattedNames;
+}
+// Example usage:
+const namesArray = ['Alice', 'Bob', 'Charlie', 'David'];
+console.log(formatNames(namesArray));
+//==============================================================================
+//Develop a function that converts an array of Fahrenheit temperatures to Celsius and logs the new temperatures.
+function fahrenheitToCelsius(fahrenheitTemperatures) {
+    const celsiusTemperatures = [];
+    for (let i = 0; i < fahrenheitTemperatures.length; i++) {
+        const celsius = (fahrenheitTemperatures[i] - 32) * 5 / 9;
+        celsiusTemperatures.push(celsius);
+    }
+    console.log("Fahrenheit Temperatures:", fahrenheitTemperatures);
+    console.log("Celsius Temperatures:", celsiusTemperatures);
+}
+// Example usage:
+const fahrenheitTemperatures = [32, 68, 86, 104];
+fahrenheitToCelsius(fahrenheitTemperatures);
+//====================================================================
+//Write a function minMaxAverage that takes an array of numbers and returns an object with properties for the minimum, maximum, and average of those numbers.
+function minMaxAverage(numbers) {
+    if (numbers.length === 0) {
+        throw new Error("Array must not be empty");
+    }
+    let min = numbers[0];
+    let max = numbers[0];
+    let sum = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        const num = numbers[i];
+        if (num < min) {
+            min = num;
+        }
+        if (num > max) {
+            max = num;
+        }
+        sum += num;
+    }
+    const average = sum / numbers.length;
+    return {
+        min,
+        max,
+        average
+    };
+}
+// Example usage:
+const numbersArray = [3, 8, 1, 6, 10];
+const result = minMaxAverage(numbersArray);
+console.log(result);
+//===========================================================================
+//Create a function swapElements that swaps two specified indices in an array.
+function swapElements(array, index1, index2) {
+    const temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+}
+const arrayToSwap = [1, 2, 3, 4, 5];
+console.log("Before swap:", arrayToSwap);
+swapElements(arrayToSwap, 1, 3);
+console.log("After swap:", arrayToSwap);
+//======================================================================================
+//Develop a function that takes two inputs, a string and a character, and returns the number of times the character appears in the string.
+function countCharacter(inputString, character) {
+    let count = 0;
+    for (let i = 0; i < inputString.length; i++) {
+        if (inputString[i] === character) {
+            count++;
+        }
+    }
+    return count;
+}
+const inputString = "hello, world!";
+const characterToCount = "o";
+const result3 = countCharacter(inputString, characterToCount);
+console.log(`The character "${characterToCount}" appears ${result3} times in the string.`);
+//=============================================================================================
+//Create a 'to-do list' array of objects where each object has properties task and completed (a boolean). Write a function to log only the tasks that are not yet completed.
+const todoList = [
+    { task: "Finish coding assignment", completed: false },
+    { task: "Buy groceries", completed: true },
+    { task: "Call mom", completed: false }
+];
+function logIncompleteTasks(todoList) {
+    console.log("Incomplete tasks:");
+    for (let i = 0; i < todoList.length; i++) {
+        if (!todoList[i].completed) {
+            console.log(todoList[i].task);
+        }
+    }
+}
+logIncompleteTasks(todoList);
+//==================================================================================
+//Write a function that takes an array of integers and sorts them from smallest to largest.
+function sortIntegers(array) {
+    return array.slice().sort((a, b) => a - b);
+}
+const integers = [5, 2, 8, 1, 3];
+const sortedIntegers = sortIntegers(integers);
+console.log("Sorted integers:", sortedIntegers);
+//================================================================
+//Develop a TypeScript program that logs every element of an array in reverse order without using the .reverse() method.
+function logArrayReverse(array) {
+    for (let i = array.length - 1; i >= 0; i--) {
+        console.log(array[i]);
+    }
+}
+const array12 = [1, 2, 3, 4, 5];
+logArrayReverse(array12);
+//===============================================================
+//Write a script that simulates a basic calculator. It should take two operands and an operator ('+', '-', '*', '/') from the user, perform the operation, and log the result.
+const answer1 = await inquirer.prompt([
+    { message: "Enter first number ", type: "number", name: "firstNumber" },
+    { message: "Enter second number", type: "number", name: "secondNumber" },
+    {
+        message: "Select one of the operators to perform operation",
+        type: "list",
+        name: "operator",
+        choices: ["Addition", "Subtraction", "Multiplication", "Division"],
+    },
+]);
+// conditional statement
+if (answer1.operator === "Addition") {
+    console.log(answer1.firstNumber + answer1.secondNumber);
+}
+else if (answer1.operator === "Subtraction") {
+    console.log(answer1.firstNumber - answer1.secondNumber);
+}
+else if (answer1.operator === "Multiplication") {
+    console.log(answer1.firstNumber * answer1.secondNumber);
+}
+else if (answer1.operator === "Division") {
+    console.log(answer1.firstNumber / answer1.secondNumber);
+}
+else {
+    console.log("Please select valid operator");
+}
